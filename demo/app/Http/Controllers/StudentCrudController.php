@@ -16,7 +16,7 @@ class StudentCrudController extends Controller
     {
         $students=Student::all();
         $data=compact('students');
-        
+
         // echo "<pre>";
         // print_r($students);
 
@@ -59,7 +59,6 @@ class StudentCrudController extends Controller
         $student->class=$request['class'];
         $student->age=$request['age'];
         $student->save();
-
         return redirect('/');
     }
 
