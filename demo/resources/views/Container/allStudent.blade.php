@@ -3,7 +3,7 @@
     <title>Student Details Page</title>
 @endpush
 @section('main-section')
-    <table class="table table-striped table-inverse table-responsive mt-5 container-fluid">
+    <table class="table table-striped table-inverse table-responsive mt-5 container-fluid text-center">
         {{-- {{$students}} --}}
         <thead class="thead-inverse">
             <tr>
@@ -13,8 +13,8 @@
                 <th>Age</th>
                 <th>Email</th>
                 <th>Class</th>
-                <th class="text-center">Actions</th>
-                {{-- <th>Delete</th> --}}
+                <th class="text-center">Edit</th>
+                <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +26,8 @@
                    <td>{{$item->age}}</td>
                    <td>{{$item->email}}</td>
                    <td>{{$item->class}}</td>
-                   <td class="btn btn-warning">Edit</td>
-                   <td class="btn btn-danger">Delete</td>
+                  <td> <a href="/update/{{$item->stud_id}}"class='btn btn-warning'>Edit</a></td>
+                  <td> <a href="/delete/{{$item->stud_id}}"class='btn btn-danger'>Delete</a></td>
                 </tr>
                 @endforeach
             </tbody>

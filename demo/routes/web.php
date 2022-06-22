@@ -13,5 +13,7 @@ use App\Http\Controllers\StudentCrudController;
 |
 */
 Route::get('/',[StudentCrudController::class,'index']);
-Route::get('/add',[StudentCrudController::class,'form']);
+Route::get('/add',[StudentCrudController::class,'form'])->name('Container.form');
 Route::post('/add',[StudentCrudController::class,'store']);
+Route::get('/update/{id}', [StudentCrudController::class,'edit']);
+Route::post('/update/{id}', [StudentCrudController::class,'update']);

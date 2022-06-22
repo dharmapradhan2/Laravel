@@ -81,7 +81,8 @@ class StudentCrudController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=Student::find($id);
+        return view('Container.Edit',compact('data'));
     }
 
     /**
@@ -93,7 +94,23 @@ class StudentCrudController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'fname'=>'required',
+            'age'=>'required|numeric',
+            'phno'=>'required',
+            'email'=>'required|email',
+            'class'=>'required',
+        ]);
+        // echo $id.'<br>';
+        // print_r($request->all());
+        $Update_data=Student::find($id);
+        $Update_data->fname=$request['fname'];
+        $Update_data->email=$request['email'];
+        $Update_data->phno=$request['phno'];
+        $Update_data->class=$request['class'];
+        $Update_data->age=$request['age'];
+        $Update_data->save();
+        return redirect('/');
     }
 
     /**
