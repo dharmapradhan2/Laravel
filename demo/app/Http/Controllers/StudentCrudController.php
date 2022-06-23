@@ -121,6 +121,8 @@ class StudentCrudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Delete_data=Student::find($id);
+        $Delete_data->delete();
+        return redirect('/');
     }
 }

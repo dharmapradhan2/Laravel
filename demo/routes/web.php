@@ -17,3 +17,4 @@ Route::get('/add',[StudentCrudController::class,'form'])->name('Container.form')
 Route::post('/add',[StudentCrudController::class,'store']);
 Route::get('/update/{id}', [StudentCrudController::class,'edit']);
 Route::post('/update/{id}', [StudentCrudController::class,'update']);
+Route::get('/delete/{id}',[StudentCrudController::class,'destroy']);
